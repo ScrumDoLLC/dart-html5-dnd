@@ -240,7 +240,13 @@ List<StreamSubscription> _installDropzone(Element element, DropzoneGroup group) 
     if (draggableAccepted) {
       mouseEvent.dataTransfer.dropEffect = currentDraggableGroup.dropEffect;
     } else {
-      mouseEvent.dataTransfer.dropEffect = 'none';
+
+      if( mouseEvent.dataTransfer.dropEffect != currentDraggableGroup.dropEffect ) {
+        // It's possible a nested drop zone already claimed that this draggable is acceptable.
+        // We only want to set this to none if that didn't happen.
+        mouseEvent.dataTransfer.dropEffect = 'none';
+      }
+
       return; // Return here as drop is not accepted.
     }
 
