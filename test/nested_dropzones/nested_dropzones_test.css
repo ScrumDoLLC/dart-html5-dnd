@@ -14,22 +14,22 @@ div {
 
 .container {
   background: #F6F6F6;
-  width: 200px;
-  height: 150px;
+  min-width: 200px;
+  min-height: 150px;
 }
 
 .child {
   margin: 35px;
   background: #A9A9A9;
-  width: 125px;
-  height: 50px;
+  min-width: 125px;
+  min-height: 50px;
 }
 
 .draggable1, .draggable2 {
   cursor: move;
   margin: 35px;
   background: #123456;
-  width: 125px;
-  height: 50px;
+  min-width: 125px;
+  min-height: 50px;
 }
 
